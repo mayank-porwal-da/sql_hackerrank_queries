@@ -1,0 +1,9 @@
+--- need to do self join to get pairs
+select a.X,a.Y from functions as a, functions as b
+--- to get symmetric metrics below given condition is to be satisfied
+where a.x = b.y and b.x = a.y
+--- to remove duplicate values below method can be used
+group by a.x,a.y
+having count(*)>1 or a.x<a.y
+--- as asked need to order by as below
+order by a.x
